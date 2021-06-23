@@ -1,0 +1,9 @@
+@startuml : GAS class diagram
+content <|-- KindleBook
+content <|-- PaperBook
+content <|-- Udemy
+content <|-- Article
+
+Question <-- content
+Plan <-- content
+@enduml
