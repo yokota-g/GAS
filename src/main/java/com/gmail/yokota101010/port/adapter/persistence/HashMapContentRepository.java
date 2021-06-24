@@ -1,8 +1,9 @@
 package com.gmail.yokota101010.port.adapter.persistence;
 
 import java.util.HashMap;
-import com.gmail.yokota101010.domain.model.Content;
-import com.gmail.yokota101010.domain.model.ContentRepository;
+
+import com.gmail.yokota101010.domain.model.Content.Content;
+import com.gmail.yokota101010.domain.model.Content.ContentRepository;
 
 public class HashMapContentRepository extends ContentRepository {
     public HashMap<String,Content> contents = new HashMap<>();

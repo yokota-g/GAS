@@ -1,4 +1,4 @@
-package com.gmail.yokota101010.domain.model;
+package com.gmail.yokota101010.domain.model.Content;
 
 public class Content {
     public String id;

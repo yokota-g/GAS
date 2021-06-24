@@ -3,6 +3,10 @@ package com.gmail.yokota101010.domain.model;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.gmail.yokota101010.domain.model.Content.Content;
+import com.gmail.yokota101010.domain.model.Content.ContentRepository;
+import com.gmail.yokota101010.domain.model.Content.ContentType;
 import com.gmail.yokota101010.port.adapter.persistence.HashMapContentRepository;
 
 public class ContentTest {
