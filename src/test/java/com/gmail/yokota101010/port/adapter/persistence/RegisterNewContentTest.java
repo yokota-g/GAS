@@ -1,11 +1,11 @@
-package com.gmail.yokota101010.application;
+package com.gmail.yokota101010.port.adapter.persistence;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 import com.gmail.yokota101010.domain.model.ContentRepository;
+import com.gmail.yokota101010.domain.model.ContentType;
 import com.gmail.yokota101010.domain.model.Content;
-import com.gmail.yokota101010.port.adapter.persistence.HashMapContentRepository;
 
 public class RegisterNewContentTest {
     ContentRepository contents;
@@ -14,8 +14,8 @@ public class RegisterNewContentTest {
     @Before
     public void setUp() throws Exception {
         contents = new HashMapContentRepository();
-        content1 = new Content(contents.getID(),"Java",2000);
-        content2 = new Content(contents.getID(),"SQL",1500);
+        content1 = new Content(contents.getID(), "Java", 2000, ContentType.KindleBook);
+        content2 = new Content(contents.getID(), "SQL", 1500, ContentType.PaperBook);
     }
 
     @Test
