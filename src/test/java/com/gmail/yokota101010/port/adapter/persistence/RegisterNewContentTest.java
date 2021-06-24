@@ -15,8 +15,8 @@ public class RegisterNewContentTest {
     @Before
     public void setUp() throws Exception {
         contents = new HashMapContentRepository();
-        content1 = new Content(contents.getID(), "Java", 2000, ContentType.KindleBook);
-        content2 = new Content(contents.getID(), "SQL", 1500, ContentType.PaperBook);
+        content1 = new Content("Java", 2000, ContentType.KindleBook);
+        content2 = new Content("SQL", 1500, ContentType.PaperBook);
     }
 
     @Test
