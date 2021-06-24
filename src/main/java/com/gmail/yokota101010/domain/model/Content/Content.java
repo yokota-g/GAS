@@ -18,7 +18,7 @@ public class Content {
         questions = new HashMap<>();
     }
 
-    public void addQuestion(String question, String answer, Status st){
+    public void addQuestion(String question, String answer, QuestionStatus st){
         Question q = new Question(question, answer, st);
         questions.put(q.id, q);
     }

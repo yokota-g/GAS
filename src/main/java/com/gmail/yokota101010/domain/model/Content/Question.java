@@ -6,9 +6,9 @@ public class Question {
     public String id;
     public String question;
     public String answer;
-    public Status st = Status.Open;
+    public QuestionStatus st = QuestionStatus.Open;
 
-    public Question(String question,String answer,Status st){
+    public Question(String question,String answer,QuestionStatus st){
         this.id = UUID.randomUUID().toString();;
         this.question = question;
         this.answer = answer;

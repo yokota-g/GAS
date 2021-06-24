@@ -1,9 +1,11 @@
 package com.gmail.yokota101010.domain.model.Content;
 
 import static org.junit.Assert.assertEquals;
+
+import com.gmail.yokota101010.port.adapter.persistence.Content.HashMapContentRepository;
+
 import org.junit.Before;
 import org.junit.Test;
-import com.gmail.yokota101010.port.adapter.persistence.HashMapContentRepository;
 
 public class ContentTest {
     ContentRepository contents;
@@ -29,8 +31,8 @@ public class ContentTest {
     @Test
     public void コンテンツに疑問を追加できる() {
         content = new Content("SQL", 1500, ContentType.PaperBook);
-        content.addQuestion("insertの方法は？","",Status.Open);
-        content.addQuestion("deleteの方法は？","",Status.Open);
+        content.addQuestion("insertの方法は？","",QuestionStatus.Open);
+        content.addQuestion("deleteの方法は？","",QuestionStatus.Open);
 
         assertEquals( content.questions.size(), 2);
     }
