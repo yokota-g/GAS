@@ -32,4 +32,15 @@ public class ContentAppServiceTest {
 
         assertEquals(content.allQuestions().values().iterator().next().question, "printの方法は？");
     }
+
+    @Test
+    public void コンテンツの疑問に回答を設定できる() {
+        String contentId = content.id;
+        String questionId = content.allQuestions().keySet().iterator().next();
+
+        ContentAppService app = new ContentAppService();
+        app.setAnswer(contentId, questionId, "wikipediaで調べよう！");
+
+        assertEquals(content.allQuestions().values().iterator().next().answer, "wikipediaで調べよう！");
+    }
 }

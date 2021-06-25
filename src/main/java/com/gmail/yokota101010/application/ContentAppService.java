@@ -10,5 +10,10 @@ public class ContentAppService {
     public void reviseQuestion(String contentId, String questionId, String revisedQuestion){
         Content content = contents.contentIdIs(contentId);
         content.reviseQuestion(questionId, revisedQuestion);
-    } 
+    }
+
+    public void setAnswer(String contentId, String questionId, String answer){
+        Content content = contents.contentIdIs(contentId);
+        content.setAnswer(questionId, answer);
+    }
 }

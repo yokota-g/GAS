@@ -55,4 +55,22 @@ public class ContentTest {
         Question q3 = qs3.get(iterator3.next());
         assertEquals( q3.question, "insertの詳しい方法は？");
     }
+
+    @Test
+    public void コンテンツの疑問に回答を設定できる() {
+        content = new Content("SQL", 1500, ContentType.PaperBook);
+        content.addQuestion("insertの方法は？","",QuestionStatus.Open);
+        contents.save(content.id,content);
+
+        content2 = contents.contentNamed("SQL");
+        HashMap<String,Question> qs2 = content2.allQuestions();
+        Iterator<String> iterator2 = qs2.keySet().iterator();
+        content2.setAnswer(iterator2.next(), "google先生に聞いてみよう！");
+
+        content3 = contents.contentNamed("SQL");
+        HashMap<String,Question> qs3 = content3.allQuestions();
+        Iterator<String> iterator3 = qs3.keySet().iterator();
+        Question q3 = qs3.get(iterator3.next());
+        assertEquals( q3.answer, "google先生に聞いてみよう！");
+    }
 }
