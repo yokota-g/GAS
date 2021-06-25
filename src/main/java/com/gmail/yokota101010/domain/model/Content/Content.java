@@ -22,4 +22,13 @@ public class Content {
         Question q = new Question(question, answer, st);
         questions.put(q.id, q);
     }
+
+    public void reviseQuestion(String questionId, String revisedQuestion){
+        Question q = questions.get(questionId);
+        q.question = revisedQuestion;
+    }
+
+    public HashMap<String,Question> allQuestions(){
+        return questions;
+    }
 }
