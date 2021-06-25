@@ -28,6 +28,11 @@ public class Content {
         q.question = revisedQuestion;
     }
 
+    public void setAnswer(String questionId, String answer){
+        Question q = questions.get(questionId);
+        q.answer = answer;
+    }
+
     public HashMap<String,Question> allQuestions(){
         return questions;
     }
