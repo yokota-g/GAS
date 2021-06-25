@@ -5,8 +5,8 @@ import java.util.HashMap;
 import com.gmail.yokota101010.domain.model.Content.Content;
 import com.gmail.yokota101010.domain.model.Content.ContentRepository;
 
-public class HashMapContentRepository extends ContentRepository {
-    public HashMap<String,Content> contents = new HashMap<>();
+public class HashMapContentRepository implements ContentRepository {
+    public static HashMap<String,Content> contents = new HashMap<>();
 
     @Override
     public long count(){
@@ -26,5 +26,15 @@ public class HashMapContentRepository extends ContentRepository {
             }
         }
         return null;
+    }
+
+    @Override
+    public void reset() {
+        contents.clear();
+    }
+
+    @Override
+    public Content contentIdIs(String contentId) {
+        return contents.get(contentId);
     }
 }
