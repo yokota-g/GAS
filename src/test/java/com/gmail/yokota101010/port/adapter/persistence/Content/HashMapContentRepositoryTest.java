@@ -7,15 +7,14 @@ import org.junit.Test;
 import com.gmail.yokota101010.domain.model.Content.Content;
 import com.gmail.yokota101010.domain.model.Content.ContentRepository;
 import com.gmail.yokota101010.domain.model.Content.ContentType;
-import com.gmail.yokota101010.port.adapter.persistence.Content.HashMapContentRepository;
 
 public class HashMapContentRepositoryTest {
-    ContentRepository contents;
+    ContentRepository contents = new HashMapContentRepository();
     Content content1,content2,content3;
 
     @Before
     public void setUp() throws Exception {
-        contents = new HashMapContentRepository();
+        contents.reset();
         content1 = new Content("Java", 2000, ContentType.KindleBook);
         content2 = new Content("SQL", 1500, ContentType.PaperBook);
     }

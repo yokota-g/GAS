@@ -1,23 +1,20 @@
 package com.gmail.yokota101010.domain.model.Content;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-
-import com.gmail.yokota101010.port.adapter.persistence.Content.HashMapContentRepository;
-
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import java.util.HashMap;
+import java.util.Iterator;
+import com.gmail.yokota101010.port.adapter.persistence.Content.HashMapContentRepository;
+
 
 public class ContentTest {
-    ContentRepository contents;
+    ContentRepository contents = new HashMapContentRepository();;
     Content content,content2,content3;
 
     @Before
     public void setUp() throws Exception {
-        contents = new HashMapContentRepository();
+        contents.reset();
     }
 
     @Test
