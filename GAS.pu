@@ -1,3 +1,13 @@
 @startuml : GAS class diagram
+class Content << aggregate root >>
+{
+    ContentId
+}
+class Question << entity >>
+
+class StudyPlan << aggregate root >>
+class ContentId << value object >>
+
 Content "1"-->"N" Question
+ContentId <-- StudyPlan
 @enduml
